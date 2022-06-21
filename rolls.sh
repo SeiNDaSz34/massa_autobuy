@@ -6,7 +6,7 @@ do
         balance_token=$(./massa-client wallet_info | grep "Final balance" | awk '{ print $3 }')
         int_balance_rolls=${balance_rolls%%.*}
         int_balance_token=${balance_token%%.*}
-        if [[ $int_balance_rolls -le "0" ] && [ $int_balance_token -gt "99" ]]; then
+        if [[ $int_balance_rolls -le "0" ]] && [[ $int_balance_token -gt "99" ]]; then
                 echo "Less than 0"
                 resp=$(./massa-client buy_rolls $massa_wallet_address 1 0)
                 echo $resp
