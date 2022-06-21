@@ -8,3 +8,8 @@ echo $balance_rolls
 echo $balance_token
 echo $int_balance_rolls
 echo $int_balance_token
+if [[ $int_balance_rolls -le "0" ]] && [[ $int_balance_token -gt "99" ]]; then
+                echo "Less than 0"
+                resp=$(./massa-client buy_rolls $massa_wallet_address 1 0)
+                echo $resp
+fi
