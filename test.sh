@@ -1,1 +1,2 @@
-echo -e Hello world
+[1 -le "0"]
+echo $?
